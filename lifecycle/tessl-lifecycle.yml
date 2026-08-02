@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tessl.io/changelog.md
+versioning:
+  scheme: semver
+  current: 0.92.0
+  docs: https://docs.tessl.io/changelog.md
+  note: >-
+    Pre-1.0 product under active development; several minor releases carry
+    breaking CLI changes (e.g. 0.90.0, 0.87.0, 0.85.0). Registry plugins/skills
+    are independently semver-versioned with patch/minor/major bump controls.
+status_page: https://tesslstatus.io/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: >-
+    No formal deprecation/Sunset-header policy published. Registry plugins can be
+    archived (prevents new installs, preserves existing) via `tessl plugin archive`,
+    and unpublished within 2 days of publishing.
+support:
+  faqs: https://docs.tessl.io/support/faqs.md
+  supported_platforms: https://docs.tessl.io/support/supported-platforms.md

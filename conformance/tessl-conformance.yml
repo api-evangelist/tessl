@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tessl.io/reference/cli-commands.md
+# Cross-cutting standards Tessl's platform conforms to. Derived from docs +
+# the live OIDC discovery document; no OpenAPI to assert HTTP-level standards.
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: auth.tessl.io publishes OAuth 2.0 endpoints (authorize/token/device_authorization)
+  - id: oidc
+    conforms: true
+    evidence: /.well-known/openid-configuration discovery document served (200)
+  - id: oauth2-device-authorization-grant
+    conforms: true
+    evidence: grant_types_supported includes urn:ietf:params:oauth:grant-type:device_code (RFC 8628)
+  - id: mcp
+    conforms: true
+    evidence: First-party MCP server (stdio) + MCP gateway (http/sse) — reference/mcp-tools.md
+  - id: agent-skills-spec
+    conforms: true
+    evidence: skill lint validates conformance to agentskills.io/specification
+  - id: llms-txt
+    conforms: true
+    evidence: docs.tessl.io/llms.txt served (200) with per-page .md and ?ask= query interface
+  - id: rfc9457-problem-details
+    conforms: false

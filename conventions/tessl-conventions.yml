@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tessl.io/reference/cli-commands.md
+# Cross-cutting semantics for the Tessl platform. Tessl is a CLI + MCP + registry
+# platform (no public REST API), so these conventions describe the CLI/registry
+# contract rather than HTTP request/response envelopes.
+authentication:
+  style: OAuth 2.0 device-code (interactive) or TESSL_TOKEN workspace API key (CI)
+  see: authentication/tessl-authentication.yml
+versioning:
+  style: semver
+  registry: Plugins and skills are semver-versioned; publish supports --bump patch|minor|major
+  see: lifecycle/tessl-lifecycle.yml
+naming:
+  plugin_ref: workspace/plugin[@version]
+  skill_ref: workspace/plugin[@version]#skill-name
+  install_sources: [registry ref, github:owner/repo, https://github.com/owner/repo, file:<path>]
+machine_output:
+  json_flag: Most commands accept --json for automation / agent workflows
+  agents: init/install configure MCP for claude-code, cursor, gemini, codex, copilot, and others
+ci_gating:
+  quality: tessl review run --threshold <percent> (non-zero exit below threshold)
+  security: tessl review run security --fail-on low|medium|high|critical (Snyk-powered)
+  risk: tessl change risk --fail-if-review-required
+idempotency:
+  supported: false
+  note: No HTTP idempotency-key contract (no REST API surface).
+pagination:
+  supported: false
+  note: List commands (eval list, review list, scenario list) use --limit; no cursor pagination.
+standards:
+  agent_skills_spec: https://agentskills.io/specification
+  mcp: Model Context Protocol (stdio + http/sse transports)

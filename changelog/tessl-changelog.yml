@@ -1,0 +1,49 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.tessl.io/changelog.md
+scheme: semver
+current_version: 0.92.0
+docs: https://docs.tessl.io/changelog.md
+entries:
+  - version: 0.92.0
+    breaking: false
+    highlights: >-
+      Plugins can declare cross-agent hooks; CLI installation now verifies
+      cryptographically signed release manifests before extraction.
+  - version: 0.91.0
+    breaking: false
+    highlights: >-
+      Agent-readiness report scans repositories; `tessl launch resume` resumes
+      interrupted cloud runs; agent works without native search tools.
+  - version: 0.90.0
+    breaking: true
+    highlights: >-
+      `tessl review <target>` now shows help instead of running; new
+      `tessl review run quality/security` subcommands replace standalone
+      security-review.
+  - version: 0.89.0
+    breaking: false
+    highlights: >-
+      `tessl agent` launches in Open Beta for workflow optimization; new
+      `tessl change` commands assist automated code reviews; `tessl launch skill`
+      runs skills via preferred agent.
+  - version: 0.88.0
+    breaking: false
+    highlights: >-
+      Plugins declare MCP servers via bundled `.mcp.json`; publish through
+      symlinks with `--resolve-symlinks`; workspace scoping for reviews.
+  - version: 0.87.0
+    breaking: true
+    highlights: >-
+      Skill review requires Tessl account authentication; `tessl review` becomes
+      a fully launched workflow with run/view/list/retry/fix commands.
+  - version: 0.86.0
+    breaking: false
+    highlights: >-
+      Customize eval-scenarios at publish with `--eval-scenarios`; default eval
+      model changed to DeepSeek v4 Flash.
+  - version: 0.85.0
+    breaking: true
+    highlights: >-
+      `--agent` now single-valued; removed legacy eval-run context flags; Skill
+      Inventory maps every skill in a GitHub org; `--context` flag for selection.

@@ -1,7 +1,28 @@
 aid: tessl
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/tessl.png
 name: Tessl
-description: 'Tessl is a company surfaced as a portfolio company of accel, gv and added to the API Evangelist
-  network as a stub for enrichment. Sector: ai. This profile is a lead awaiting the enrichment pipeline.'
+description: >-
+  Tessl is an agent-enablement platform that gives engineering teams a management
+  layer for AI agent skills and plugins: continuously build, test, distribute, and
+  optimize the context that coding agents rely on, with the security and governance
+  of enterprise software. It centers on the Tessl Registry (3,000+ public skills
+  plus private workspaces), the Tessl CLI, a first-party MCP server and workspace
+  MCP gateway, Snyk-powered security scanning with install policies, and quality
+  reviews and evaluations that can gate skills in CI. Skills and plugins are
+  agent-agnostic, working across Claude Code, Cursor, Copilot, Gemini, and others.
+  Founded by Guy Podjarny (Snyk); backed by Accel and GV.
 url: https://raw.githubusercontent.com/api-evangelist/tessl/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,10 +33,18 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Ai
+- Agents
+- Agentic Development
+- Developer Tools
+- Agent Skills
+- MCP
+- CLI
+- Registry
+- Code Review
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -25,3 +54,56 @@ maintainers:
 common:
 - type: Website
   url: https://www.tessl.io/
+- type: DeveloperPortal
+  url: https://docs.tessl.io/
+- type: Documentation
+  url: https://docs.tessl.io/reference/cli-commands.md
+- type: GettingStarted
+  url: https://docs.tessl.io/introduction-to-tessl/set-up-tessl
+- type: Blog
+  url: https://tessl.io/blog
+- type: Pricing
+  url: https://tessl.io/pricing
+- type: Login
+  url: https://tessl.io/login/
+- type: Support
+  url: https://discord.com/invite/jbb2vHnHZQ
+- type: GitHubOrganization
+  url: https://github.com/tesslio
+- type: StatusPage
+  url: https://tesslstatus.io/
+- type: TrustCenter
+  url: https://trust.tessl.io/
+- type: ChangeLog
+  url: changelog/tessl-changelog.yml
+- type: MCPServer
+  url: mcp/tessl-mcp.yml
+- type: CLI
+  url: cli/tessl-cli.yml
+- type: Packages
+  url: packages/tessl-packages.yml
+- type: LLMsTxt
+  url: llms/tessl-llms.txt
+- type: WellKnown
+  url: well-known/tessl-well-known.yml
+- type: SecurityTxt
+  url: well-known/tessl-security.txt
+- type: Authentication
+  url: authentication/tessl-authentication.yml
+- type: Conventions
+  url: conventions/tessl-conventions.yml
+- type: Conformance
+  url: conformance/tessl-conformance.yml
+- type: Lifecycle
+  url: lifecycle/tessl-lifecycle.yml
+- type: DomainSecurity
+  url: security/tessl-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/tessl-vulnerability-disclosure.yml
+- type: Security
+  url: https://tessl.io/.well-known/security.txt
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 15
+  pass: local-v1

@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: searched
+probe: true
+url: https://trust.tessl.io/
+source: https://www.tessl.io/
+# Tessl links a dedicated Trust Center (trust.tessl.io, HTTP 200) from its
+# marketing site. The certification list is rendered client-side (JS) and could
+# not be verified verbatim by fetch/probe on this pass, so no specific
+# certifications are asserted here and no `Compliance` pointer is emitted.
+# Re-run to capture named certs (SOC 2 / ISO 27001 / GDPR) once the page is
+# server-rendered or via the trust-center vendor API.
+certifications: []
+certifications_verified: false
+security_contact: security@tessl.io
+notes: >-
+  Trust Center exists and is publicly linked; Snyk-powered security scanning is a
+  first-class platform feature (skill/plugin install policies gate on critical/high
+  Snyk findings). Named compliance certifications were not machine-verifiable on
+  this pass.

@@ -1,0 +1,33 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of Tessl base hosts
+# Tessl's authentication runs on a dedicated OAuth 2.0 / OIDC authorization
+# server at auth.tessl.io, which serves both OIDC discovery and RFC 8414
+# authorization-server metadata. The product hosts also serve an RFC 9116
+# security.txt.
+hosts:
+  - host: https://auth.tessl.io
+    documents:
+      - path: /.well-known/openid-configuration        # OpenID Connect Discovery
+        status: 200
+        file: tessl-openid-configuration.json
+      - path: /.well-known/oauth-authorization-server  # RFC 8414
+        status: 200
+        file: tessl-oauth-authorization-server.json
+  - host: https://tessl.io
+    documents:
+      - path: /.well-known/security.txt                 # RFC 9116
+        status: 200
+        file: tessl-security.txt
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/api-catalog                  # RFC 9727
+        status: 404
+  - host: https://www.tessl.io
+    documents:
+      - path: /.well-known/security.txt                 # RFC 9116
+        status: 200
+  - host: https://docs.tessl.io
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
