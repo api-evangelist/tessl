@@ -2,36 +2,32 @@ generated: '2026-07-21'
 method: searched
 status: published
 source: https://docs.tessl.io/reference/mcp-tools.md
-# Tessl ships two first-party MCP surfaces:
-#  1. The Tessl Registry MCP server — a local stdio server (`tessl mcp start`)
-#     that exposes the plugin/skill registry to any coding agent. Configured
-#     automatically by `tessl init --agent <name>`.
-#  2. The Tessl MCP gateway — a workspace-level broker that wraps an upstream
-#     MCP server (http/sse) and is reached via `tessl mcp proxy <workspace>/<mcp>`,
-#     which speaks MCP over stdio and authenticates with tessl login / TESSL_TOKEN.
 servers:
-  - name: Tessl Registry MCP
-    transport: stdio
-    command: tessl mcp start
-    setup: tessl init --agent <claude-code|cursor|gemini|codex|copilot|...>
-    docs: https://docs.tessl.io/reference/mcp-tools.md
-    tools:
-      - name: login
-        description: Authenticate with Tessl to access registry features.
-      - name: search
-        description: Find plugins in the registry by name, package URL, or HTTP URL.
-      - name: install
-        description: Add plugins to your project or sync missing ones.
-      - name: uninstall
-        description: Remove a plugin from your project.
-      - name: status
-        description: View authentication and plugin synchronization status.
-  - name: Tessl MCP gateway
-    transport: stdio
-    command: tessl mcp proxy <workspace>/<mcp>
-    description: >-
-      Workspace gateway that brokers authorized connections to an upstream MCP
-      server (http or sse transport) so workspace members share one authorized
-      server without individual OAuth flows. Authenticates via tessl login or
-      the TESSL_TOKEN environment variable (CI).
-    docs: https://docs.tessl.io/reference/mcp-gateway.md
+- name: Tessl Registry MCP
+  transport: stdio
+  command: tessl mcp start
+  setup: tessl init --agent <claude-code|cursor|gemini|codex|copilot|...>
+  docs: https://docs.tessl.io/reference/mcp-tools.md
+  tools:
+  - name: login
+    description: Authenticate with Tessl to access registry features.
+  - name: search
+    description: Find plugins in the registry by name, package URL, or HTTP URL.
+  - name: install
+    description: Add plugins to your project or sync missing ones.
+  - name: uninstall
+    description: Remove a plugin from your project.
+  - name: status
+    description: View authentication and plugin synchronization status.
+- name: Tessl MCP gateway
+  transport: stdio
+  command: tessl mcp proxy <workspace>/<mcp>
+  description: Workspace gateway that brokers authorized connections to an upstream MCP server (http or
+    sse transport) so workspace members share one authorized server without individual OAuth flows. Authenticates
+    via tessl login or the TESSL_TOKEN environment variable (CI).
+  docs: https://docs.tessl.io/reference/mcp-gateway.md
+deployment:
+  mode: unclear
+  verified: searched
+  checked: '2026-08-12'
+  source: catalog MCP census
